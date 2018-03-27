@@ -7,6 +7,8 @@ import RootComponent from '../components/RootComponent'
 import NewCourseComponent from '../components/NewCourseComponent'
 import CoursesComponent from '../components/CoursesComponent'
 import NotFound from '../components/NotFound'
+import MessagesComponent from '../components/MessagesComponent'
+import NotificationsComponent from '../components/NotificationsComponent'
 
 Vue.use(Router)
 
@@ -54,8 +56,29 @@ export default new Router({
         },
 
         {
+            path: '/courses/:id',
+            name: 'courses',
+            component: CoursesComponent
+
+        },
+
+        {
             path: '*',
             component: NotFound
-        }
+        },
+
+        {
+            path: '/messages',
+            name: 'messages',
+            component: MessagesComponent
+
+        },
+
+        {
+            path: '/notifications',
+            name: 'notifications',
+            component: NotificationsComponent
+
+        },
     ]
 })

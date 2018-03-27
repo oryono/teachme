@@ -4,17 +4,15 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <h4>Login to Lara</h4>
-                <form>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="email" v-model="email" required>
-                    </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="email" v-model="email" required>
+                </div>
 
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="password" v-model="password" required>
-                    </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="password" v-model="password" required>
+                </div>
 
-                    <button class="btn btn-success" @click="login">Login</button>
-                </form>
+                <button class="btn btn-success" @click="login">Login</button>
 
             </div>
             <div class="col-md-4"></div>
