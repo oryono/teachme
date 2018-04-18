@@ -8,7 +8,7 @@ import App from './components/App'
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
 
 window.Vue = require('vue');
 
@@ -29,17 +29,6 @@ const app = new Vue({
     components: {
         App
     },
-
-    created: function () {
-        window.axios.interceptors.response.use(function (response) {
-            return response;
-        }, function (error) {
-            // Do something with response error
-            router.push({name: 'login'})
-            console.log('Interceptor running')
-            return Promise.reject(error);
-        });
-    }
 });
 
 

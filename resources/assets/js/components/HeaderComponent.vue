@@ -30,6 +30,10 @@
                                 <router-link to="/Notifications" class="nav-link">Notifications</router-link>
                             </li>
 
+                            <li class="nav-item">
+                                <router-link to="/collegues" class="nav-link">Collegues</router-link>
+                            </li>
+
                         </ul>
 
                         <ul class="nav border-0 flex-column flex-lg-row" v-if="!$store.state.isUserLoggedIn">
