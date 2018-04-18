@@ -1,35 +1,37 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <h4>Register</h4>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="firstname" v-model="firstname">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="lastname" v-model="lastname">
-                </div>
-
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="email" v-model="email">
-                </div>
-
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="password" v-model="password">
-                </div>
-
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="confirm password" v-model="password_confirmation">
-                </div>
-
-                <button class="btn btn-success" @click="register">Login</button>
-            </div>
-            <div class="col-md-4"></div>
-
+    <div class="col col-login mx-auto">
+        <div class="text-center mb-6">
+            <!--<img src="./assets/brand/tabler.svg" class="h-6" alt="">-->
         </div>
-
+        <form class="card">
+            <div class="card-body p-6">
+                <div class="card-title">Create new account</div>
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter name" v-model="name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter email" v-model="email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" v-model="password">
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" />
+                        <span class="custom-control-label">Agree the <a href="terms.html">terms and policy</a></span>
+                    </label>
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary btn-block" @click="register">Create new account</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-center text-muted">
+            Already have account? <router-link to="login">Sign in</router-link>
+        </div>
     </div>
 </template>
 
@@ -39,11 +41,9 @@
     export default {
         data: function () {
             return {
-                firstname: '',
-                lastname: '',
+                name: '',
                 email: '',
                 password: '',
-                password_confirmation: ''
             }
 
         },
@@ -52,11 +52,9 @@
             async register () {
                 try {
                     await AuthenticationService.register({
-                        firstname: this.firstname,
-                        lastname: this.lastname,
+                        name: this.name,
                         email: this.email,
                         password: this.password,
-                        password_confirmation: this.password_confirmation
 
                     })
                 } catch (err) {
