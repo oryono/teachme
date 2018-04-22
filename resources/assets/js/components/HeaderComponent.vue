@@ -4,9 +4,10 @@
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
-                        <img src="/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
-                    </a>
+                    <router-link class="header-brand" to="/">
+                        Lara
+                        <!--<img src="/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">-->
+                    </router-link>
 
                     <div>
                         <ul class="nav border-0 flex-column flex-lg-row" v-if="$store.state.isUserLoggedIn">
