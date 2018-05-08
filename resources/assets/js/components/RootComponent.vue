@@ -1,7 +1,23 @@
 <template>
     <div>
-        <top-categories></top-categories>
-        <popular-courses></popular-courses>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    Popular Categories
+                </h1>
+            </div>
+            <top-categories></top-categories>
+        </div>
+
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">
+                    Popular Categories
+                </h1>
+            </div>
+            <popular-courses></popular-courses>
+        </div>
+
     </div>
 </template>
 

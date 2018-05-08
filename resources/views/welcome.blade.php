@@ -8,6 +8,8 @@
 
         <title>Laravel</title>
 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAceQpVKumhZ5YrNGsTELNpsfsnEdllqaE&libraries=places"></script>
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

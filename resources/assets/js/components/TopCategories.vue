@@ -1,22 +1,24 @@
 <template>
-    <div class="container-fluid">
-        <div><h4>Popular Categories</h4></div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"><stretch v-if="loading"/></div>
-            <div class="col-md-4"></div>
-        </div>
-
-        <div :loading="false">
-            <div class="row" >
-                <div class="col-md-3" v-for="category in categories">
-                    <router-link :to="'/courses/' + category.category_id"> {{ category.category }}</router-link>
+    <div>
+        <div><stretch v-if="loading"></stretch></div>
+        <div :loading="false" class="row">
+            <div class="col-md-3" v-for="category in categories">
+                <div class="card card-aside">
+                    <div class="card-body d-flex flex-column">
+                        <h4><router-link :to="'/courses/' + category.category_id">{{ category.category }}</router-link></h4>
+                        <div class="text-muted">{{ category.description }}</div>
+                        <div class="d-flex align-items-center pt-5 mt-auto">
+                            <div class="avatar avatar-md mr-3"
+                                 style="background-image: url(/demo/faces/female/18.jpg)"></div>
+                            <div>
+                                <a href="./profile.html" class="text-default">Rose Bradley</a>
+                                <small class="d-block text-muted">3 days ago</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-        <hr>
     </div>
 </template>
 

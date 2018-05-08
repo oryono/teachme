@@ -6,7 +6,7 @@
             </h1>
         </div>
 
-        <div class="row row-cards">
+<!--        <div class="row row-cards">
             <div class="col-6 col-sm-4 col-lg-2">
                 <div class="card">
                     <div class="card-body p-3 text-center">
@@ -79,9 +79,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <div class="row row-cards row-deck">
+<!--        <div class="row row-cards row-deck">
             <div class="col-lg-6">
                 <div class="card card-aside">
                     <a href="#" class="card-aside-column" style="background-image: url(/demo/photos/david-klaasen-54203-500.jpg)"></a>
@@ -120,14 +120,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="page-header">
             <h1 class="page-title">
                 Classes <span class="float-right"><router-link to="/courses/new" class="btn btn-default">Create a new class</router-link></span>
             </h1>
         </div>
-        <div class="row">
+<!--        <div class="row">
             <div v-for="(lesson, index) in lessons" :id="lesson.id" class="col-md-3" style="background-color: #cccccc; border: 1px solid; margin: 10px; padding: 10px">
                 <div>{{ lesson.course.title }} <i class="float-right"><a v-on:click="deleteLesson(lesson, index)" href="#">Delete</a></i></div>
                 <hr>
@@ -135,6 +135,27 @@
                 <div>Starting: {{ lesson.start_date }}</div>
                 <div>Ending: {{ lesson.end_date }}</div>
                 <div>Class size: {{ lesson.class_size }}</div>
+            </div>
+        </div>-->
+
+        <!--<div><stretch v-if="loading"></stretch></div>-->
+        <div class="row" :loading="false">
+            <div class="col-md-3" v-for="lesson in lessons">
+                <div class="card card-aside">
+                    <div class="card-body d-flex flex-column">
+                        <h4><a href="#">{{ lesson.course.title }}</a></h4>
+                        <div class="text-muted">{{ lesson.course.description }}
+                        </div>
+                        <div class="d-flex align-items-center pt-5 mt-auto">
+                            <div class="avatar avatar-md mr-3"
+                                 style="background-image: url(/demo/faces/female/18.jpg)"></div>
+                            <div>
+                                <a href="./profile.html" class="text-default">Rose Bradley</a>
+                                <small class="d-block text-muted">3 days ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
