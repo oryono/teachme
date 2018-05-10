@@ -14,7 +14,7 @@ export default new Router({
         {
             path: '/',
             name: 'root',
-            component: RootComponent
+            component: RootComponent,
 
         },
         {
@@ -34,7 +34,10 @@ export default new Router({
         {
             path: '/home',
             name: 'home',
-            component: HomeComponent
+            component: HomeComponent,
+            meta: {
+                requiresAuth: true
+            }
 
         },
 
@@ -48,7 +51,10 @@ export default new Router({
         {
             path: '/courses',
             name: 'courses',
-            component: CoursesComponent
+            component: CoursesComponent,
+            meta: {
+                requiresAuth: true
+            }
 
         },
     ]

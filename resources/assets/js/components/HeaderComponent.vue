@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="d-flex">
                     <router-link class="header-brand" to="/">
-                        Lara
+                        Teachme
                         <!--<img src="/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">-->
                     </router-link>
 
@@ -133,15 +133,7 @@
                 this.$store.dispatch('setToken', null)
                 this.$router.push({name: 'login'})
             },
-
-            getFullName() {
-                return this.$store.state.user.name
-            }
         },
-
-        mounted() {
-            this.fullName = this.$store.state.user.name
-        }
 
     }
 </script>

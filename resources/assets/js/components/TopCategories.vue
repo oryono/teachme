@@ -8,11 +8,11 @@
                         <h4><router-link :to="'/courses/' + category.category_id">{{ category.category }}</router-link></h4>
                         <div class="text-muted">{{ category.description }}</div>
                         <div class="d-flex align-items-center pt-5 mt-auto">
-                            <div class="avatar avatar-md mr-3"
+<!--                            <div class="avatar avatar-md mr-3"
                                  style="background-image: url(/demo/faces/female/18.jpg)"></div>
-                            <div>
-                                <a href="./profile.html" class="text-default">Rose Bradley</a>
-                                <small class="d-block text-muted">3 days ago</small>
+                            <div>-->
+                                <!--<a href="./profile.html" class="text-default">Rose Bradley</a>-->
+                                <small class="d-block text-muted">{{ category.count }} enrollments so far</small>
                             </div>
                         </div>
                     </div>

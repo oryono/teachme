@@ -16211,12 +16211,12 @@ instance.interceptors.response.use(function (response) {
             //window.localStorage.setItem('token', result.data.token);
             __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('setToken', result.data.token);
             var request = error.config;
-            request.headers[Authorization] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].state.token;
+            request.headers.Authorization = 'Bearer ' + result.data.token;
             return instance.request(request);
         }).catch(function () {
             __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('setToken', null);
             __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */].dispatch('setUser', null);
-            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].go({ name: 'login' });
+            __WEBPACK_IMPORTED_MODULE_2__router__["a" /* default */].push({ name: 'login' });
         });
     }
     return Promise.reject(error);
@@ -49071,7 +49071,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "page-header" }, [
       _c("h1", { staticClass: "page-title" }, [
-        _vm._v("\n                Popular Categories\n            ")
+        _vm._v("\n                Popular Classes\n            ")
       ])
     ])
   }
@@ -54620,15 +54620,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$store.dispatch('setUser', null);
             this.$store.dispatch('setToken', null);
             this.$router.push({ name: 'login' });
-        },
-        getFullName: function getFullName() {
-            return this.$store.state.user.name;
         }
-    },
-
-    mounted: function mounted() {
-        this.fullName = this.$store.state.user.name;
     }
+
 });
 
 /***/ }),
@@ -54649,7 +54643,7 @@ var render = function() {
             _c(
               "router-link",
               { staticClass: "header-brand", attrs: { to: "/" } },
-              [_vm._v("\n                    Lara\n                    ")]
+              [_vm._v("\n                    Teachme\n                    ")]
             ),
             _vm._v(" "),
             _c("div", [

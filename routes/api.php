@@ -81,8 +81,6 @@ $api->version('v1', ['middleware' => 'api.auth'], function ($api) {
         $api->post('{id}/enroll', LessonsController::class.'@enroll');
     });
 
-    //$api->get('refresh-token', AuthenticationController::class.'@refreshToken');
-
 });
 
 

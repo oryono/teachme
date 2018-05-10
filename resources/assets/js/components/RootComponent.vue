@@ -12,7 +12,7 @@
         <div class="container">
             <div class="page-header">
                 <h1 class="page-title">
-                    Popular Categories
+                    Popular Classes
                 </h1>
             </div>
             <popular-courses></popular-courses>

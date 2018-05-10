@@ -41,19 +41,16 @@ instance.interceptors.response.use((response) => {
     return response;
 }, (error) => {
     console.log(`error ${error}`);
-    if (error.response.status === 401) {
+    if (error.response.status === 401 ) {
         return AuthenticationService.refresh().then((result) => {
-            console.log('Result', result);
-            //window.localStorage.setItem('token', result.data.token);
             store.dispatch('setToken', result.data.token);
             let request = error.config;
-            request.headers[Authorization] = `Bearer ${store.state.token}`;
+            request.headers.Authorization = `Bearer ${result.data.token}`;
             return instance.request(request)
         }).catch(() => {
-            store.dispatch('setToken', null)
-            store.dispatch('setUser', null)
-            router.go({name: 'login'})
+            router.push({name: 'login'})
         })
+
     }
     return Promise.reject(error);
 });

@@ -53,7 +53,7 @@ class LessonsController extends Controller
     public function getPopular()
     {
 
-        return Offering::with(['lesson.course.course_category'])
+        return Offering::with(['lesson.course.course_category', 'lesson.user'])
             ->groupBy('lesson_id')->orderBy('count', 'desc')
             ->get(['lesson_id', DB::raw('count(lesson_id) as count')])
             ->take(8);

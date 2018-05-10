@@ -11,7 +11,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAceQpVKumhZ5YrNGsTELNpsfsnEdllqaE&libraries=places"></script>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
 
@@ -31,7 +31,7 @@
             ]); ?>
         </script>
 
-        <script src="{{ asset('assets/js/app.js') }}"></script>
+        <script src="{{ mix('assets/js/app.js') }}"></script>
 
 
         <script src="{{ asset('assets/js/require.min.js') }}"></script>

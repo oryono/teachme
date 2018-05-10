@@ -1,10 +1,10 @@
 <template>
     <div class="container">
-        <div class="page-header">
+<!--        <div class="page-header">
             <h1 class="page-title">
                 Dashboard
             </h1>
-        </div>
+        </div>-->
 
 <!--        <div class="row row-cards">
             <div class="col-6 col-sm-4 col-lg-2">
@@ -151,7 +151,7 @@
                                  style="background-image: url(/demo/faces/female/18.jpg)"></div>
                             <div>
                                 <a href="./profile.html" class="text-default">{{ lesson.user.name }}</a>
-                                <small class="d-block text-muted">3 days ago</small>
+                                <small class="d-block text-muted">{{ moment(lesson.start_date).fromNow() }}</small>
                             </div>
                         </div>
                     </div>
@@ -176,7 +176,7 @@
                                  style="background-image: url(/demo/faces/female/18.jpg)"></div>
                             <div>
                                 <a href="./profile.html" class="text-default">{{ enrollment.lesson.user.name }}</a>
-                                <small class="d-block text-muted">3 days ago</small>
+                                <small class="d-block text-muted">{{ moment(enrollment.lesson.start_date).fromNow() }}</small>
                             </div>
                         </div>
                     </div>
@@ -192,13 +192,15 @@
 
 <script>
     import LessonService from '../services/LessonService'
+    import moment from 'moment'
 
     export default {
         name: 'home',
         data () {
             return {
                 lessons: [],
-                enrollments: []
+                enrollments: [],
+                moment: moment
             }
         },
 

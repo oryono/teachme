@@ -90,19 +90,6 @@
                 this.$router.push({name: 'home'})
 
             },
-
-            /*            checkEnrollment(user_id, lesson_id) {
-                            console.log('Reached')
-                            console.log('enrollents', this.enrollments)
-                            for (var i=0; i<this.enrollments.length; i++){
-                                if (user_id == this.enrollments[i].user_id && lesson_id == this.enrollments[i].user_id) {
-                                    this.enrolled = true
-                                }
-                            }
-
-                        }*/
-
-
         },
 
         async mounted() {
