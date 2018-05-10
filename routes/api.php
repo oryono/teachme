@@ -27,6 +27,8 @@ $api->version('v1', function ($api) {
 
     $api->post('auth/token', AuthenticationController::class.'@authenticate');
 
+    $api->get('refresh-token', AuthenticationController::class.'@refreshToken');
+
     $api->group(['prefix' => 'courses'], function ($api){
         $api->get('/', CoursesController::class. '@index');
 
@@ -78,6 +80,8 @@ $api->version('v1', ['middleware' => 'api.auth'], function ($api) {
 
         $api->post('{id}/enroll', LessonsController::class.'@enroll');
     });
+
+    //$api->get('refresh-token', AuthenticationController::class.'@refreshToken');
 
 });
 

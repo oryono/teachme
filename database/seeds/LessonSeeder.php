@@ -80,7 +80,7 @@ class LessonSeeder extends Seeder
             ],
 
             [
-                'course_id' => 1,
+                'course_id' => 11,
                 'user_id' => 2,
                 'description' => '',
                 'start_date' => date("Y-m-d H:i:s"),
@@ -91,7 +91,7 @@ class LessonSeeder extends Seeder
             ],
 
             [
-                'course_id' => 1,
+                'course_id' => 6,
                 'user_id' => 4,
                 'description' => '',
                 'start_date' => date("Y-m-d H:i:s"),
@@ -102,7 +102,7 @@ class LessonSeeder extends Seeder
             ],
 
             [
-                'course_id' => 1,
+                'course_id' => 7,
                 'user_id' => 2,
                 'description' => '',
                 'start_date' => date("Y-m-d H:i:s"),
@@ -113,7 +113,7 @@ class LessonSeeder extends Seeder
             ],
 
             [
-                'course_id' => 2,
+                'course_id' => 14,
                 'user_id' => 1,
                 'description' => '',
                 'start_date' => date("Y-m-d H:i:s"),

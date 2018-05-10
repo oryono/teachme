@@ -150,7 +150,7 @@
                             <div class="avatar avatar-md mr-3"
                                  style="background-image: url(/demo/faces/female/18.jpg)"></div>
                             <div>
-                                <a href="./profile.html" class="text-default">Rose Bradley</a>
+                                <a href="./profile.html" class="text-default">{{ lesson.user.name }}</a>
                                 <small class="d-block text-muted">3 days ago</small>
                             </div>
                         </div>
@@ -164,9 +164,23 @@
                 Enrollments <span class="float-right"><router-link to="/courses" class="btn btn-default">Enroll for new Courses</router-link></span>
             </h1>
         </div>
-        <div class="row">
-            <div v-for="enrollment in enrollments" v-bind:key="enrollment.id" class="col-md-3" style="background-color: #cccccc; border: 1px solid; margin: 10px; padding: 10px">
-                <div>{{ enrollment.lesson.course.title }}</div>
+        <div class="row" :loading="false">
+            <div class="col-md-3" v-for="enrollment in enrollments">
+                <div class="card card-aside">
+                    <div class="card-body d-flex flex-column">
+                        <h4><a href="#">{{ enrollment.lesson.course.title }}</a></h4>
+                        <div class="text-muted">{{ enrollment.lesson.course.description }}
+                        </div>
+                        <div class="d-flex align-items-center pt-5 mt-auto">
+                            <div class="avatar avatar-md mr-3"
+                                 style="background-image: url(/demo/faces/female/18.jpg)"></div>
+                            <div>
+                                <a href="./profile.html" class="text-default">{{ enrollment.lesson.user.name }}</a>
+                                <small class="d-block text-muted">3 days ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

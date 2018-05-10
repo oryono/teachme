@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Laravel</title>
+        <title>Tutme</title>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAceQpVKumhZ5YrNGsTELNpsfsnEdllqaE&libraries=places"></script>
 
@@ -24,9 +24,6 @@
         <div id="app">
             <App></App>
         </div>
-
-
-
 
         <script>
             window.Laravel = <?php echo json_encode([

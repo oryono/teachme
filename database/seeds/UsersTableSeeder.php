@@ -13,8 +13,26 @@ class UsersTableSeeder extends Seeder
     {
         $users = [
             [
-                'name' => 'Patrick Oryono',
+                'name' => 'Patrick One',
                 'email' => 'patricken08@live.com',
+                'password' => bcrypt('password')
+            ],
+
+            [
+                'name' => 'Patrick Two',
+                'email' => 'patricken08@gmail.com',
+                'password' => bcrypt('password')
+            ],
+
+            [
+                'name' => 'Patrick Three',
+                'email' => 'oryonop@gmail.com',
+                'password' => bcrypt('password')
+            ],
+
+            [
+                'name' => 'Patrick Four',
+                'email' => 'patricken08+1@live.com',
                 'password' => bcrypt('password')
             ]
         ];

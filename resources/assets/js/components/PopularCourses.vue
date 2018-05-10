@@ -46,6 +46,8 @@
                 .then(function (response) {
                     self.courses = response.data
                     self.loading = false
+                }, function (err) {
+                    console.log(err)
                 })
         },
 

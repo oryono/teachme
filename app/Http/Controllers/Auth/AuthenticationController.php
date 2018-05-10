@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Dingo\Api\Facade\API;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthenticationController extends Controller
@@ -28,5 +29,20 @@ class AuthenticationController extends Controller
         // all good so return the token
         return response()->json(['user' => $user, 'token' => $token]);
 
+    }
+
+    public function refreshToken()
+    {
+        $token = JWTAuth::getToken();
+        Log::info("Trying to refresh token: $token");
+        if (!$token) {
+            return response()->json('Token NOT provided!', 401);
+        }
+
+        Log::info("Refreshing here, but the method throws exception!!??");
+
+        $token = JWTAuth::refresh($token);
+
+        return response()->json(compact('token'));
     }
 }

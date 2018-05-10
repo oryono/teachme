@@ -15,13 +15,13 @@ class LessonsController extends Controller
 {
     public function index()
     {
-        $offerings = Offering::with('lesson.course')->where('user_id', API::user()->id)->get();
+        $offerings = Offering::with(['lesson.course'])->where('user_id', API::user()->id)->get();
         $course_ids = [];
         foreach ($offerings as $offering) {
             $course_ids[] = $offering->lesson->course->id;
         }
 
-        return Lesson::with('course')
+        return Lesson::with(['course', 'user'])
             ->whereNotIn('user_id', [API::user()->id])
             ->whereNotIn('course_id', $course_ids)
             ->get();

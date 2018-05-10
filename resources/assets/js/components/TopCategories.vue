@@ -47,7 +47,10 @@
                 .then(function (response) {
                     self.categories = response.data
                     self.loading = false
-                })
+                }, function (err) {
+                        console.log(err)
+                    }
+                )
 
         },
 

@@ -6,16 +6,14 @@
 </template>
 
 <script>
-    import axios from 'axios'
     import HeaderComponent from './HeaderComponent'
     export default {
         name: 'App',
         components: {
             HeaderComponent,
-
-
         },
-
     }
+
+
 
 </script>

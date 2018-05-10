@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <div class="header py-4">
             <div class="container">
@@ -29,10 +28,6 @@
 
                             <li class="nav-item">
                                 <router-link to="/Notifications" class="nav-link">Notifications</router-link>
-                            </li>
-
-                            <li class="nav-item">
-                                <router-link to="/collegues" class="nav-link">Collegues</router-link>
                             </li>
 
                         </ul>

@@ -19,13 +19,13 @@ class UserController extends Controller
 
     public function getLessons($id)
     {
-        $lessons = Lesson::with('course')->where('user_id', $id)->get();
+        $lessons = Lesson::with(['course', 'user'])->where('user_id', $id)->get();
         return response()->json($lessons);
     }
 
     public function getEnrollments($user_id)
     {
-        return Offering::with('lesson.course')->where('user_id', $user_id)->get();
+        return Offering::with(['lesson.course', 'lesson.user'])->where('user_id', $user_id)->get();
     }
 
 }
