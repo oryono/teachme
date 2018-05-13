@@ -5,7 +5,6 @@
                 <div class="d-flex">
                     <router-link class="header-brand" to="/">
                         Teachme
-                        <!--<img src="/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">-->
                     </router-link>
 
                     <div>
@@ -43,7 +42,7 @@
                     </div>
 
 
-                    <div class="d-flex order-lg-2 ml-auto" v-if="$store.state.isUserLoggedIn">
+                    <div class="d-flex order-lg-2 ml-auto" v-if="$store.state.isUserLoggedIn && $store.state.user">
                         <div class="dropdown d-none d-md-flex">
                             <a class="nav-link icon" data-toggle="dropdown">
                                 <i class="fe fe-bell"></i>
@@ -78,7 +77,7 @@
                                 <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown" v-if="$store.state.user">
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                                 <span class="avatar" style="background-image: url(/demo/faces/female/25.jpg)"></span>
                                 <span class="ml-2 d-none d-lg-block">
@@ -109,7 +108,8 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse"
+                       data-target="#headerMenuCollapse">
                         <span class="header-toggler-icon"></span>
                     </a>
                 </div>
@@ -120,22 +120,17 @@
 </template>
 
 <script>
-    export default {
-        name: 'page-header',
-        data() {
-            return {
-                fullName: ''
-            }
-        },
-        methods: {
-            logout () {
-                this.$store.dispatch('setUser', null)
-                this.$store.dispatch('setToken', null)
-                this.$router.push({name: 'login'})
-            },
-        },
+  export default {
+    name: 'page-header',
+    methods: {
+      logout() {
+        this.$store.dispatch('setUser', null)
+        this.$store.dispatch('setToken', null)
+        this.$router.push({name: 'login'})
+      },
+    },
 
-    }
+  }
 </script>
 
 
