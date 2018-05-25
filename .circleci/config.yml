@@ -48,9 +48,9 @@ jobs:
 
       - run: php artisan key:generate --env=testing
 
-      - run: php artisan migrate
+      - run: php artisan migrate --env=testing
 
-      - run: php artisan db:seed
+      - run: php artisan db:seed --env=testing
 
       - save_cache:
           paths:
