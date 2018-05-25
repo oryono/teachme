@@ -26,6 +26,10 @@ jobs:
       - checkout
 
       - run:
+          name: Install mysql server
+          command: sudo apt install mysql-server
+
+      - run:
           name: Install PHP extensions
           command: sudo docker-php-ext-install pdo_mysql
 
