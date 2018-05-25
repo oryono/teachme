@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-login mx-auto">
-                        <form class="card">
+                        <div class="card">
                             <div class="card-body p-6">
                                 <div class="card-title">Login to your account</div>
                                 <div class="form-group">
@@ -28,7 +28,7 @@
                                     <button type="submit" class="btn btn-primary btn-block" @click="login">Sign in</button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                         <div class="text-center text-muted">
                             Don't have account yet? <router-link to="register">Sign up</router-link>
                         </div>
@@ -53,13 +53,17 @@
 
         methods: {
             async login () {
-                const response = await AuthenticationService.login({
+                return await AuthenticationService.login({
                     email: this.email,
                     password: this.password
-                })
-                this.$store.dispatch('setToken', response.data.token)
-                this.$store.dispatch('setUser', response.data.user)
-                this.$router.push({name: 'home'})
+                }).then((response) => {
+                  this.$store.dispatch('setToken', response.data.token)
+                  this.$store.dispatch('setUser', response.data.user)
+                  this.$router.push({name: 'home'})
+                }).catch((error) => {
+                  console.log(error)
+                });
+
             }
         }
     }

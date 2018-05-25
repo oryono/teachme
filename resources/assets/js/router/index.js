@@ -6,6 +6,8 @@ import HomeComponent from '../components/HomeComponent'
 import RootComponent from '../components/RootComponent'
 import NewCourseComponent from '../components/NewCourseComponent'
 import CoursesComponent from '../components/CoursesComponent'
+import ProfileComponent from '../components/ProfileComponent'
+import SingleLessonComponent from '../components/SingleLessonComponent'
 
 Vue.use(Router)
 
@@ -50,12 +52,27 @@ export default new Router({
 
     {
       path: '/courses',
-      name: 'courses',
       component: CoursesComponent,
       meta: {
         requiresAuth: true
       }
 
+    },
+
+    {
+      path: '/courses/:id',
+      component: SingleLessonComponent,
+      meta: {
+        requiresAuth: true
+      }
+
+    },
+
+
+    {
+      path: '/profile/:username',
+      name: 'profile',
+      component: ProfileComponent
     },
   ]
 })

@@ -29,7 +29,7 @@ class LessonsController extends Controller
 
     public function show($id)
     {
-        return Lesson::find($id);
+        return Lesson::with(['course', 'user'])->find($id);
     }
 
     public function store(Request $request)

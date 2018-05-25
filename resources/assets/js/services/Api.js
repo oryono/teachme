@@ -14,7 +14,8 @@ instance.interceptors.request.use((request) => {
   }
 
   if (token === null && request.url === '/refresh-token') {
-    router.go({name: 'login'})
+    router.push({name: 'login'})
+    return false
   }
 
   return request
@@ -26,7 +27,7 @@ instance.interceptors.request.use((request) => {
 
 
 instance.interceptors.response.use(undefined, (response) => {
-  console.log('Response', response.response);
+  //console.log('Response', response.response);
   if (response.response.status === 401) {
     return AuthenticationService.refresh().then((result) => {
       store.dispatch('setToken', result.data.token);

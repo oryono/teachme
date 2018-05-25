@@ -16,11 +16,12 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('course_id')->unsigned();
+            $table->string('slug')->nullable();
             $table->integer('user_id');
             $table->text('description')->nullable();
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->integer('class_size')->unsigned();
             $table->timestamps();
         });
