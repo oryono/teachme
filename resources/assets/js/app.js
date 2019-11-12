@@ -13,8 +13,8 @@ import middleware from './middleware'
 
 window.Vue = require('vue');
 
-sync(store, router)
-middleware(router)
+// sync(store, router)
+// middleware(router)
 
 const app = new Vue({
     el: '#app',

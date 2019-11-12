@@ -4,7 +4,7 @@ import router from '../router'
 import AuthenticationService from "./AuthenticationService";
 
 const instance = axios.create({
-  baseURL: 'http://tutme.test/api',
+  baseURL: 'http://teachme.test/api',
 })
 instance.interceptors.request.use((request) => {
   let token = store.state.token;
